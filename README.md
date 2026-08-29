@@ -1,5 +1,5 @@
 # 概要
-* DirectX11のゲームテンプレートです。
+* DirectXの3Dシューティングゲームです。
 
 # ライブラリ
 * ImGUI ( [license](https://github.com/mochinekoo/DirectX11_Game_Template/blob/main/LICENSE) )
