@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ObjectViewer_DirectX\MochinekoEngine\InputManager.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="EndingScene.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="MochinekoEngine\BaseCollider.h" />
     <ClInclude Include="MochinekoEngine\BaseObject.h" />
     <ClInclude Include="MochinekoEngine\BaseScene.h" />
@@ -59,12 +61,15 @@
     <ClInclude Include="MochinekoEngine\Transform.h" />
     <ClInclude Include="MochinekoEngine\VideoData.h" />
     <ClInclude Include="MochinekoEngine\VideoObject.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="RunningScene.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ObjectViewer_DirectX\MochinekoEngine\InputManager.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="EndingScene.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="MochinekoEngine\Box.cpp" />
     <ClCompile Include="MochinekoEngine\BoxCollider.cpp" />
     <ClCompile Include="MochinekoEngine\CameraManager.cpp" />
@@ -97,6 +102,7 @@
     <ClCompile Include="MochinekoEngine\Texture.cpp" />
     <ClCompile Include="MochinekoEngine\VideoData.cpp" />
     <ClCompile Include="MochinekoEngine\VideoObject.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="RunningScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
