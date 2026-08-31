@@ -6,25 +6,23 @@
 #include "MochinekoEngine/ObjectManager.h"
 #include "MochinekoEngine/DX2DManager.h"
 #include "MochinekoEngine/FontText.h"
+#include "MochinekoEngine/CameraManager.h"
 
 void RunningScene::Init() {
+	Camera* camera = CameraManager::GetCurrentCamera();
+	camera->postion_ = {0, 15, -30};
+	camera->target_ = { 0, 0, 0 };
+
+	Player* player = new Player();
+	player->SetLocation({0, 0, -15});
+	ObjectManager::AddObject(player);
+
+	Enemy* enemy = new Enemy();
+	ObjectManager::AddObject(enemy);
 }
 
 void RunningScene::Update() {
-	if (InputManager::CheckDownKey(DIK_SPACE)) {
-		Bullet* bullet = new Bullet();
-		ObjectManager::AddObject(bullet);
-	}
 
-	if (InputManager::CheckDownKey(DIK_E)) {
-		Enemy* enemy = new Enemy();
-		ObjectManager::AddObject(enemy);
-	}
-
-	if (InputManager::CheckDownKey(DIK_P)) {
-		Player* player = new Player();
-		ObjectManager::AddObject(player);
-	}
 }
 
 void RunningScene::Draw()
