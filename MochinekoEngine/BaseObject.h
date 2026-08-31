@@ -95,8 +95,13 @@ public:
 	void SetTag(const std::string& tag) { tag_ = tag; }
 	void KillMe() { isDead_ = true; }
 	bool IsDead() const { return isDead_; }
+
 	Transform GetTransform() const { return transform_; }
 	void SetTransform(const Transform& transform) { transform_ = transform; }
+	void SetLocation(const DirectX::XMFLOAT3 location) { transform_.location_ = location; }
+	void SetScale(const DirectX::XMFLOAT3 scale) { transform_.scale_ = scale; }
+	void SetRotation(const DirectX::XMFLOAT3 rotation) { transform_.rotation_ = rotation; }
+
 	int GetDrawOrder() const { return drawHighOrder_; }
 	void SetDrawOrder(const int order) { drawHighOrder_ = order;  }
 	bool IsShowImGUI() const { return showImGUI_; }
