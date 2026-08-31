@@ -33,7 +33,7 @@ VSOutput main(VSInput input) {
     VSOutput output;
     output.position = mul(float4(input.position, 1.0f), wvpMatrix);
     output.normal = input.normal;
-    output.color = diffuse;
+    output.color = input.color;
     output.uv = input.uv;
 
     return output;
