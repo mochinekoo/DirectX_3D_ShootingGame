@@ -1,13 +1,15 @@
 #pragma once
 #include "MochinekoEngine/BaseObject.h"
+#include "MochinekoEngine/FBX.h"
 
 class Player : public BaseObject {
 private:
+	FBX* fbx_;
 public:
 
 	Player()
 		: BaseObject("Player") {
-
+		fbx_ = nullptr;
 	}
 
 	~Player() {}
