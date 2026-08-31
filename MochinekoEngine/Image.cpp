@@ -37,6 +37,8 @@ void Image::Draw() {
 	UINT stride = sizeof(Vertex);
 	UINT offset = 0;
 
+	DisableZDepthWrite();
+
 	ShaderManager::SetPixelShader("MochinekoEngine/PixelShader.hlsl");
 	ShaderManager::SetVertexShader("MochinekoEngine/VertexShader.hlsl");
 	GetDeviceContext()->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
@@ -49,6 +51,8 @@ void Image::Draw() {
 	GetDeviceContext()->PSSetConstantBuffers(0, 1, &constantBuffer);
 
 	GetDeviceContext()->Draw(6, 0);
+
+	EnableZDepthWrite();
 
 	GetDeviceContext()->RSSetState(nullptr);
 }
