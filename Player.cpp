@@ -12,6 +12,7 @@ void Player::Init() {
 void Player::Update() {
 	if (InputManager::CheckDownKey(DIK_SPACE)) {
 		Bullet* bullet = new Bullet();
+		bullet->SetLocation(transform_.location_);
 		ObjectManager::AddObject(bullet);
 	}
 
