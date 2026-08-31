@@ -21,7 +21,7 @@ struct PSInput
 };
 
 float4 main(PSInput input) : SV_TARGET {
-    float4 color = { 1.0f, 0.0f, 0.0f, 1.0f };
+    float4 color = input.color;
     
     if (hasTexture == 1) {
         color = texture0.Sample(sampler0, input.uv);
@@ -30,5 +30,5 @@ float4 main(PSInput input) : SV_TARGET {
         color = diffuse;
     }
     
-    return color * input.color;
+    return color;
 }
