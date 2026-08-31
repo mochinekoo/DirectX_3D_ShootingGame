@@ -113,6 +113,7 @@ void ObjectManager::RemoveObject(BaseObject* object) {
 		if (*it == object) {
 			delete* it;
 			it = objectList_.erase(it);
+			return;
 		}
 		else {
 			it++;
