@@ -22,12 +22,28 @@ void Player::Update() {
 		bullet->SetLocation(transform_.location_);
 		ObjectManager::AddObject(bullet);
 	}
+	if (InputManager::CheckDownKey(DIK_Y) || InputManager::IsControllerButtonPush(XINPUT_GAMEPAD_Y)) {
+		transform_.rotation_ = { 0, 0, 0 };
+	}
 
 	if (InputManager::CheckPushKey(DIK_LEFT) || InputManager::GetControllerTiltLeft().x <= -32767 * 0.5) {
 		transform_.location_.x -= transform_.velocity_.x;
 	}
 	if (InputManager::CheckPushKey(DIK_RIGHT) || InputManager::GetControllerTiltLeft().x >= 32767 * 0.5) {
 		transform_.location_.x += transform_.velocity_.x;
+	}
+
+	if (InputManager::CheckPushKey(DIK_A) || InputManager::GetControllerTiltRight().x <= -32767 * 0.5) {
+		transform_.rotation_.x -= DirectX::XMConvertToRadians(1.0f);
+	}
+	if (InputManager::CheckPushKey(DIK_D) || InputManager::GetControllerTiltRight().x >= 32767 * 0.5) {
+		transform_.rotation_.x += DirectX::XMConvertToRadians(1.0f);
+	}
+	if (InputManager::CheckPushKey(DIK_W) || InputManager::GetControllerTiltRight().y <= -32767 * 0.5) {
+		transform_.rotation_.y -= DirectX::XMConvertToRadians(1.0f);
+	}
+	if (InputManager::CheckPushKey(DIK_S) || InputManager::GetControllerTiltRight().y >= 32767 * 0.5) {
+		transform_.rotation_.y += DirectX::XMConvertToRadians(1.0f);
 	}
 
 	fbx_->SetTransform(transform_);
