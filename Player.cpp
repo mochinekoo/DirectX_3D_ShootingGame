@@ -3,12 +3,17 @@
 #include "MochinekoEngine/InputManager.h"
 #include "Bullet.h"
 #include "MochinekoEngine/ObjectManager.h"
+#include "MochinekoEngine/BoxCollider.h"
 
 void Player::Init() {
 	fbx_ = new FBX("Asset/Player.fbx");
 	fbx_->Init();
 
 	transform_.velocity_ = {0.1, 0, 0.1};
+
+	auto collider = new BoxCollider(this, { 8.0f, 2.0f, 5.0f });
+	collider->Init();
+	colliderList_.push_back(collider);
 }
 
 void Player::Update() {
@@ -31,6 +36,7 @@ void Player::Update() {
 }
 
 void Player::Draw() {
+	fbx_->DrawImGUI();
 	fbx_->Draw();
 }
 
