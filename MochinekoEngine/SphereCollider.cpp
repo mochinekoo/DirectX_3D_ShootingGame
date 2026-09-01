@@ -17,6 +17,7 @@ void SphereCollider::Update() {
 	transform_.scale_ = { radius_, radius_, radius_ };
 
 	fbx_->SetTransform(transform_);
+	fbx_->UpdateTransform();
 	fbx_->Update();
 }
 

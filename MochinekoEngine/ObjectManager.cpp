@@ -15,8 +15,15 @@ void ObjectManager::Update() {
 	for (int i = 0; i < objectList_.size(); i++) {
 		BaseObject* object = objectList_[i];
 		if (object == nullptr) continue;
+		auto& colList = object->GetColliderList();
 		if (object->GetParent() == nullptr) {
 			object->UpdateTransform();
+		}
+
+		for (int a = 0; a < colList.size(); a++) {
+			auto col = colList[a];
+			if (col == nullptr) continue;
+			col->Draw();
 		}
 	}
 

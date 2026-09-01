@@ -17,6 +17,7 @@ void BoxCollider::Update() {
 	transform_.scale_ = colliderSize_;
 
 	fbx_->SetTransform(transform_);
+	fbx_->UpdateTransform();
 	fbx_->Update();
 }
 
