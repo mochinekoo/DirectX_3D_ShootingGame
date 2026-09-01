@@ -7,11 +7,15 @@
 #include "MochinekoEngine/DX2DManager.h"
 #include "MochinekoEngine/FontText.h"
 #include "MochinekoEngine/CameraManager.h"
+#include "MochinekoEngine/ModelManager.h"
 
 void RunningScene::Init() {
 	Camera* camera = CameraManager::GetCurrentCamera();
 	camera->postion_ = {0, 15, -30};
 	camera->target_ = { 0, 0, 0 };
+
+	RunningSceneModel::bulletHandle_ = ModelManager::Load("Asset/Bullet.fbx");
+	RunningSceneModel::sphereColHandle_ = ModelManager::Load("MochinekoEngine/Asset/SphereCollider.fbx");
 
 	Player* player = new Player();
 	player->SetLocation({0, 0, -15});

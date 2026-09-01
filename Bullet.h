@@ -4,13 +4,13 @@
 
 class Bullet : public BaseObject{
 private:
-	FBX* fbx_;
+	//FBX* fbx_;
 	float lifeTime_;
 public:
 
 	Bullet() 
 		: BaseObject("Bullet") {
-		fbx_ = nullptr;
+		// fbx_ = nullptr;
 		lifeTime_ = 0.0f;
 	};
 

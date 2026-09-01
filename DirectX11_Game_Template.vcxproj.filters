@@ -171,6 +171,9 @@
     <ClInclude Include="Enemy.h">
       <Filter>Source\Object</Filter>
     </ClInclude>
+    <ClInclude Include="MochinekoEngine\ModelManager.h">
+      <Filter>MochinekoEngine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MochinekoEngine\CameraManager.cpp">
@@ -289,6 +292,9 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="MochinekoEngine\ModelManager.cpp">
+      <Filter>MochinekoEngine\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

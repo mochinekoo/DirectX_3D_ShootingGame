@@ -1,14 +1,17 @@
 #include "SphereCollider.h"
 #include <DirectXMath.h>
+#include "../RunningScene.h"
+#include "ModelManager.h"
 
 using namespace DirectX;
+using namespace RunningSceneModel;
 
 void SphereCollider::Init() {
-	fbx_->Init();
-	fbx_->SetWireframe(true);
-	Transform transform = fbx_->GetTransform();
+	FBX* model = ModelManager::GetModel(sphereColHandle_);
+	Transform transform = model->GetTransform();
 	transform.scale_ = {radius_, radius_, radius_};
-	fbx_->SetTransform(transform);
+	model->SetTransform(transform);
+	model->SetWireframe(true);
 }
 
 void SphereCollider::Update() {
@@ -16,13 +19,14 @@ void SphereCollider::Update() {
     transform_.location_ = parentTransform.location_;
 	transform_.scale_ = { radius_, radius_, radius_ };
 
-	fbx_->SetTransform(transform_);
-	fbx_->UpdateTransform();
-	fbx_->Update();
+	FBX* model = ModelManager::GetModel(sphereColHandle_);
+	model->SetTransform(transform_);
+	model->UpdateTransform();
+	model->Update();
 }
 
 void SphereCollider::Draw() {
-	fbx_->Draw();
+	ModelManager::GetModel(sphereColHandle_)->Draw();
 }
 
 bool SphereCollider::IsHitSphereSphere(SphereCollider* col1, SphereCollider* col2) {

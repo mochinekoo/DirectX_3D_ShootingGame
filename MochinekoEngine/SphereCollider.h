@@ -5,14 +5,13 @@
 
 class SphereCollider : public BaseCollider {
 private:
-	FBX* fbx_;
+	// FBX* fbx_;
 	float radius_;
 public:
 
 	SphereCollider(BaseObject* parent, const float radius)
 		: BaseCollider(ColliderType::SPHERE, parent) {
 		radius_ = radius;
-		fbx_ = new FBX("MochinekoEngine/Asset/SphereCollider.fbx");
 	};
 
 	~SphereCollider() {

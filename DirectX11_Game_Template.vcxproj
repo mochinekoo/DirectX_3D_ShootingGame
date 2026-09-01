@@ -52,6 +52,7 @@
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_rectpack.h" />
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_textedit.h" />
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_truetype.h" />
+    <ClInclude Include="MochinekoEngine\ModelManager.h" />
     <ClInclude Include="MochinekoEngine\ObjectManager.h" />
     <ClInclude Include="MochinekoEngine\SceneManager.h" />
     <ClInclude Include="MochinekoEngine\ShaderManager.h" />
@@ -94,6 +95,7 @@
     <ClCompile Include="MochinekoEngine\ImGUI\imgui_tables.cpp" />
     <ClCompile Include="MochinekoEngine\ImGUI\imgui_widgets.cpp" />
     <ClCompile Include="MochinekoEngine\Main.cpp" />
+    <ClCompile Include="MochinekoEngine\ModelManager.cpp" />
     <ClCompile Include="MochinekoEngine\ObjectManager.cpp" />
     <ClCompile Include="MochinekoEngine\SceneManager.cpp" />
     <ClCompile Include="MochinekoEngine\ShaderManager.cpp" />
