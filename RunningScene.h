@@ -6,14 +6,20 @@ namespace RunningSceneModel {
 	inline int bulletHandle_ = -1;
 }
 
+namespace {
+	inline const float DEFAULT_GAMETIME = 30.0f;
+}
+
 class RunningScene : public BaseScene {
 private:
+	float gameTime_;
 public:
 
 	RunningScene()
 		: BaseScene("RunningScene") {
 		RunningSceneModel::bulletHandle_ = -1;
 		RunningSceneModel::sphereColHandle_ = -1;
+		gameTime_ = DEFAULT_GAMETIME;
 	}
 
 	~RunningScene() {}

@@ -28,11 +28,16 @@ void RunningScene::Init() {
 
 void RunningScene::Update() {
 	auto enemyList = ObjectManager::FindObjects<Enemy>();
-	if (enemyList.empty()) {
+	bool canFinish = enemyList.empty() || gameTime_ <= 0;
+	if (canFinish) {
 		SceneManager::ChangeScene("EndingScene");
 	}
+
+	gameTime_ -= MochinekoEngine::GetDeltaTime();
 }
 
-void RunningScene::Draw()
-{
+void RunningScene::Draw() {
+	char leftText[255] = {};
+	sprintf_s(leftText, sizeof(leftText), "残り時間：%.0f 秒", gameTime_);
+	DX2DManager::DrawFontText(0, 0, leftText, {0, 0, 0, 1});
 }
