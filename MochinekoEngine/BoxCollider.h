@@ -2,6 +2,7 @@
 #include <DirectXMath.h>
 #include "BaseCollider.h"
 #include "FBX.h"
+#include "SphereCollider.h"
 
 class BoxCollider : public BaseCollider {
 private:
@@ -27,4 +28,5 @@ public:
 	void SetColliderSize(const DirectX::XMFLOAT3& colliderSize) { colliderSize_ = colliderSize; }
 
 	static bool IsHitBoxBox(BoxCollider* colA, BoxCollider* colB);
+	static bool IsHitBoxSphere(BoxCollider* col1, SphereCollider* col2);
 };

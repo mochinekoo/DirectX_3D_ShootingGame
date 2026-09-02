@@ -3,6 +3,8 @@
 #include "BaseCollider.h"
 #include "FBX.h"
 
+class BoxCollider;
+
 class SphereCollider : public BaseCollider {
 private:
 	// FBX* fbx_;
@@ -26,4 +28,5 @@ public:
 	void SetRadius(const float radius) { radius_ = radius; }
 
 	static bool IsHitSphereSphere(SphereCollider* col1, SphereCollider* col2);
+	static bool IsHitSphereBox(SphereCollider* col1, BoxCollider* col2);
 };

@@ -38,3 +38,24 @@ bool BoxCollider::IsHitBoxBox(BoxCollider* colA, BoxCollider* colB) {
 	}
 	return false;
 }
+
+bool BoxCollider::IsHitBoxSphere(BoxCollider* col1, SphereCollider* col2) {
+	if (col1 != nullptr && col2 != nullptr) {
+		XMFLOAT3 spherePos = col2->GetTransform().location_;
+		XMFLOAT3 boxPos = col1->transform_.location_;
+		float sphereRadius = col2->GetRadius();
+
+		XMVECTOR sphereVector = XMLoadFloat3(&spherePos);
+		XMVECTOR boxVector = XMLoadFloat3(&boxPos);
+
+		XMFLOAT3 boxSize = col1->GetColliderSize();
+		XMVECTOR boxHalfSize = XMVectorSet(boxSize.x / 2.0f, boxSize.y / 2.0f, boxSize.z / 2.0f, 0.0f);
+
+		XMVECTOR minBox = XMVectorSubtract(boxVector, boxHalfSize);
+		XMVECTOR maxBox = XMVectorAdd(boxVector, boxHalfSize);
+		XMVECTOR closestPoint = XMVectorClamp(sphereVector, minBox, maxBox);
+		XMVECTOR diff = XMVectorSubtract(sphereVector, closestPoint);
+		float distance = XMVectorGetX(XMVector3LengthSq(diff));
+		return distance < (sphereRadius * sphereRadius);
+	}
+}

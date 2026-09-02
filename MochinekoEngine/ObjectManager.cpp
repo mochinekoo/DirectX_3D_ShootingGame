@@ -74,6 +74,13 @@ void ObjectManager::Update() {
 							continue;
 						}
 					}
+					if (colliderA->GetColliderType() == ColliderType::BOX && colliderB->GetColliderType() == ColliderType::SPHERE) {
+						if (BoxCollider::IsHitBoxSphere(boxColA, sphereColB)) {
+							// OutputDebugString(L"Hit: Box VS Sphere (Sphere VS BOX) \n");
+							isHit = true;
+							continue;
+						}
+					}
 				}
 			}
 
