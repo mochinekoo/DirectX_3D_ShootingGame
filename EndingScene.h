@@ -3,7 +3,7 @@
 
 class EndingScene : public BaseScene {
 private:
-	int counter_;
+	float counter_;
 public:
 
 	EndingScene()
