@@ -22,6 +22,9 @@ void TitleScene::Update() {
 	if (exitButton_->IsPush()) {
 		MochinekoEngine::Shutdown();
 	}
+
+	startButton_->GetImage()->SetGray((!startButton_->IsHover()));
+	exitButton_->GetImage()->SetGray((!exitButton_->IsHover()));
 }
 
 void TitleScene::Draw() {

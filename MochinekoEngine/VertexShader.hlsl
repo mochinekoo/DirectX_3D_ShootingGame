@@ -10,6 +10,7 @@ cbuffer ConstantBuffer : register(b0) {
     float shininess;
     int hasTexture;
     float3 lightDirection;
+    int enableGray;
 };
 
 struct VSInput

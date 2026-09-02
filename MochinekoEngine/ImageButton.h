@@ -31,6 +31,8 @@ public:
 	bool IsPush() const { return isPush_; }
 	bool IsHover() const { return isHover_; }
 
+	Image* GetImage() const { return image_; }
+
 	void SetHoverFunc(std::function<void()> func) { hoverFunc = func; }
 	void SetPushFunc(std::function<void()> func) { pushFunc = func; }
 };

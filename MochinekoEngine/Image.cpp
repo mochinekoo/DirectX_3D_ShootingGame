@@ -25,6 +25,7 @@ void Image::Update() {
 	constantBuffer.diffuse_ = {};
 	constantBuffer.ambient_ = {};
 	constantBuffer.hasTexture_ = TRUE;
+	constantBuffer.enableGray = enableGray_;
 	GetDeviceContext()->UpdateSubresource(texture_->GetConstanctBuffer(), 0, nullptr, &constantBuffer, 0, 0);
 }
 

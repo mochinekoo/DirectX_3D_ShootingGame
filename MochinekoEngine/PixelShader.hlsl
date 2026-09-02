@@ -10,10 +10,10 @@ cbuffer ConstantBuffer : register(b0) {
     float shininess;
     int hasTexture;
     float3 lightDirection;
+    int enableGray;
 };
 
-struct PSInput
-{
+struct PSInput {
     float4 position : SV_POSITION;
     float3 normal : NORMAL;
     float4 color : COLOR;
@@ -28,6 +28,14 @@ float4 main(PSInput input) : SV_TARGET {
     }
     else {
         color = diffuse;
+    }
+    
+    if (enableGray == 1) {
+        float r = color.r * 0.299;
+        float g = color.g * 0.587;
+        float b = color.b * 0.114;
+        float gray = r + g + b;
+        return float4(gray, gray, gray, color.w);
     }
     
     return color;
