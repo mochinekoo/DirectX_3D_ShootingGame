@@ -86,6 +86,8 @@ void ObjectManager::Update() {
 
 			if (isHit) {
 				OutputDebugString(L"Hit! \n");
+				objectA->OnCollision(objectB);
+				objectB->OnCollision(objectA);
 				continue;
 			}
 		}
@@ -128,9 +130,6 @@ void ObjectManager::RemoveObject(BaseObject* object) {
 			delete* it;
 			it = objectList_.erase(it);
 			return;
-		}
-		else {
-			it++;
 		}
 	}
 }
