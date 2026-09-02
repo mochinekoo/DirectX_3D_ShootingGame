@@ -17,6 +17,7 @@
 #include "InputManager.h"
 
 #pragma comment(lib, "dxgi.lib")
+#pragma comment(lib, "Winmm.lib")
 
 namespace {
 	inline bool canShowBoxWindow_ = false;
@@ -25,6 +26,7 @@ namespace {
 namespace MochinekoEngine {
 	inline HWND mainWindowHandle_ = {};
 	inline bool canShutdown_ = false;
+	float deltaTime_ = 0.0f;
 
 	HWND GetGameWindowHandle() {
 		return mainWindowHandle_;
@@ -36,6 +38,10 @@ namespace MochinekoEngine {
 
 	void Shutdown() {
 		canShutdown_ = true;
+	}
+
+	float GetDeltaTime() {
+		return deltaTime_;
 	}
 }
 
@@ -81,6 +87,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			EnableZDepthWrite();
 			GetDeviceContext()->ClearRenderTargetView(renderTargetView,  BACKGROUND_COLOR);
 			GetDeviceContext()->ClearDepthStencilView(GetDepthView(), D3D11_CLEAR_DEPTH, 1.0f, 0);
+
+			static DWORD beforeTime = timeGetTime();
+			DWORD afterTime = timeGetTime();
+			DWORD diffTime = afterTime - beforeTime;
+
+			beforeTime = afterTime;
+			MochinekoEngine::deltaTime_ = (float)diffTime / 1000;
 
 			ImGuiIO& io = ImGui::GetIO();
 			ImGui_ImplDX11_NewFrame();
@@ -209,6 +222,7 @@ void DrawDebugImGUI() {
 	auto leftTilt = InputManager::GetControllerTiltLeft();
 
 	ImGui::Begin("DebugInfo");
+	ImGui::Text("DeltaTime: %2.2f", MochinekoEngine::GetDeltaTime());
 	ImGui::Text("Mouse Left: %d, Mouse Center: %d, Mouse Right: %d", InputManager::CheckPushMouse(0), InputManager::CheckPushMouse(1), InputManager::CheckPushMouse(2));
 	ImGui::Text("Mouse Left: %d, Mouse Center: %d, Mouse Right: %d", InputManager::CheckDownMouse(0), InputManager::CheckDownMouse(1), InputManager::CheckDownMouse(2));
 	ImGui::Text("Xbox %2.2f, %2.2f", InputManager::GetControllerLeftTrigger(), InputManager::GetControllerRightTrigger());

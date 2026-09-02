@@ -6,4 +6,5 @@ namespace MochinekoEngine {
 	HWND GetGameWindowHandle();
 	bool CanShutdown();
 	void Shutdown();
+	float GetDeltaTime();
 }
