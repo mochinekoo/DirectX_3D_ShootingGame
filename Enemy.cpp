@@ -5,7 +5,7 @@ void Enemy::Init() {
 	fbx_ = new FBX("Asset/Enemy.fbx");
 	fbx_->Init();
 
-	auto collider = new BoxCollider(this, {1.0f, 1.0f, 1.0f});
+	auto collider = new BoxCollider(this, {2.0f, 3.0f, 1.0f});
 	collider->Init();
 	colliderList_.push_back(collider);
 }
