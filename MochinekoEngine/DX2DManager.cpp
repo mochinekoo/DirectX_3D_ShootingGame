@@ -69,7 +69,7 @@ void DX2DManager::DrawFontText(const int x, const int y, const std::string& text
 
 	renderTarget_->DrawTextW(
 		wText.c_str(),
-		text.size(),
+		wText.size(),
 		defaultFont_.textFormat_,
 		D2D1::RectF(x, y, size.width, size.height),
 		defaultFont_.brush_
