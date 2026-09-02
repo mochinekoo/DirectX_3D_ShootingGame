@@ -18,5 +18,7 @@ public:
 	void Update() override;
 	void Draw() override;
 	void Release() override;
+
+	void OnCollision(BaseObject* object) override;
 };
 

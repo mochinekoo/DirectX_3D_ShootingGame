@@ -63,6 +63,8 @@ public:
 	};
 	virtual void Release() {};
 
+	virtual void OnCollision(BaseObject* object) {};
+
 	BaseObject* GetParent() const { return parent_; }
 	void SetParent(BaseObject* object) { parent_ = object; }
 
