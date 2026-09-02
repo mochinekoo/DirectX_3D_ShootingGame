@@ -3,10 +3,12 @@
 
 class EndingScene : public BaseScene {
 private:
+	int counter_;
 public:
 
-	EndingScene() {
-
+	EndingScene()
+		: BaseScene("EndingScene") {
+		counter_ = 0;
 	}
 
 	~EndingScene() {}

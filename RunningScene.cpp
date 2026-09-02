@@ -8,6 +8,7 @@
 #include "MochinekoEngine/FontText.h"
 #include "MochinekoEngine/CameraManager.h"
 #include "MochinekoEngine/ModelManager.h"
+#include "MochinekoEngine/SceneManager.h"
 
 void RunningScene::Init() {
 	Camera* camera = CameraManager::GetCurrentCamera();
@@ -26,7 +27,10 @@ void RunningScene::Init() {
 }
 
 void RunningScene::Update() {
-
+	auto enemyList = ObjectManager::FindObjects<Enemy>();
+	if (enemyList.empty()) {
+		SceneManager::ChangeScene("EndingScene");
+	}
 }
 
 void RunningScene::Draw()
