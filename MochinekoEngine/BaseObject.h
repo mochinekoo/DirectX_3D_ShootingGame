@@ -109,4 +109,10 @@ public:
 	bool IsShowImGUI() const { return showImGUI_; }
 	void SetShowImGUI(const bool flag) { showImGUI_ = flag; }
 	std::vector<BaseCollider*>& GetColliderList() { return colliderList_; }
+
+	void AddCollider(BaseCollider* collider) {
+		collider->Init();
+		colliderList_.push_back(collider);
+	};
+
 };

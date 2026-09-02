@@ -13,9 +13,7 @@ void Bullet::Init() {
 
 	transform_.velocity_ = {0, 0, 0.1};
 
-	auto collider = new SphereCollider(this, 1.0f);
-	collider->Init();
-	colliderList_.push_back(collider);
+	AddCollider(new SphereCollider(this, 1.0f));
 }
 
 void Bullet::Update() {

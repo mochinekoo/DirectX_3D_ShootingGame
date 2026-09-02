@@ -11,9 +11,7 @@ void Player::Init() {
 
 	transform_.velocity_ = {0.1, 0, 0.1};
 
-	auto collider = new BoxCollider(this, { 8.0f, 2.0f, 5.0f });
-	collider->Init();
-	colliderList_.push_back(collider);
+	AddCollider(new BoxCollider(this, { 8.0f, 2.0f, 5.0f }));
 }
 
 void Player::Update() {
