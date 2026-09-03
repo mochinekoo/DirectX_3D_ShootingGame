@@ -14,7 +14,7 @@ namespace {
 void Bullet::Init() {
 	lifeTime_ = DEFAULT_LIFETIME;
 
-	transform_.velocity_ = {0, 0, 0.1};
+	//transform_.velocity_ = {0, 0, 0.1};
 
 	AddCollider(new SphereCollider(this, 1.0f));
 }
@@ -28,6 +28,8 @@ void Bullet::Update() {
 		return;
 	}
 
+	transform_.location_.x += transform_.velocity_.x;
+	transform_.location_.y += transform_.velocity_.y;
 	transform_.location_.z += transform_.velocity_.z;
 
 	model->SetTransform(transform_);

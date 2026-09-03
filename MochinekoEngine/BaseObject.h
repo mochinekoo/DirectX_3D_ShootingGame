@@ -103,6 +103,7 @@ public:
 	void SetLocation(const DirectX::XMFLOAT3 location) { transform_.location_ = location; }
 	void SetScale(const DirectX::XMFLOAT3 scale) { transform_.scale_ = scale; }
 	void SetRotation(const DirectX::XMFLOAT3 rotation) { transform_.rotation_ = rotation; }
+	void SetVelocity(const DirectX::XMFLOAT3 velocity) { transform_.velocity_ = velocity; }
 
 	int GetDrawOrder() const { return drawHighOrder_; }
 	void SetDrawOrder(const int order) { drawHighOrder_ = order;  }
