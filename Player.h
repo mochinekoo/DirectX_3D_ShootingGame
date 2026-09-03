@@ -4,12 +4,12 @@
 
 class Player : public BaseObject {
 private:
-	FBX* fbx_;
+	//FBX* fbx_;
 public:
 
 	Player()
 		: BaseObject("Player") {
-		fbx_ = nullptr;
+		//fbx_ = nullptr;
 	}
 
 	~Player() {}

@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ObjectViewer_DirectX\MochinekoEngine\InputManager.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="EndingScene.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameGlobal.h" />
     <ClInclude Include="MochinekoEngine\BaseCollider.h" />
     <ClInclude Include="MochinekoEngine\BaseObject.h" />
     <ClInclude Include="MochinekoEngine\BaseScene.h" />
@@ -52,6 +52,7 @@
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_rectpack.h" />
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_textedit.h" />
     <ClInclude Include="MochinekoEngine\ImGUI\imstb_truetype.h" />
+    <ClInclude Include="MochinekoEngine\InputManager.h" />
     <ClInclude Include="MochinekoEngine\ModelManager.h" />
     <ClInclude Include="MochinekoEngine\ObjectManager.h" />
     <ClInclude Include="MochinekoEngine\SceneManager.h" />
@@ -67,10 +68,10 @@
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ObjectViewer_DirectX\MochinekoEngine\InputManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="EndingScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameGlobal.cpp" />
     <ClCompile Include="MochinekoEngine\Box.cpp" />
     <ClCompile Include="MochinekoEngine\BoxCollider.cpp" />
     <ClCompile Include="MochinekoEngine\CameraManager.cpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="MochinekoEngine\FBX.cpp" />
     <ClCompile Include="MochinekoEngine\FbxChild.cpp" />
     <ClCompile Include="MochinekoEngine\FontText.cpp" />
+    <ClCompile Include="MochinekoEngine\Framework.cpp" />
     <ClCompile Include="MochinekoEngine\Image.cpp" />
     <ClCompile Include="MochinekoEngine\ImageButton.cpp" />
     <ClCompile Include="MochinekoEngine\ImageManager.cpp" />
@@ -94,6 +96,7 @@
     <ClCompile Include="MochinekoEngine\ImGUI\imgui_stdlib.cpp" />
     <ClCompile Include="MochinekoEngine\ImGUI\imgui_tables.cpp" />
     <ClCompile Include="MochinekoEngine\ImGUI\imgui_widgets.cpp" />
+    <ClCompile Include="MochinekoEngine\InputManager.cpp" />
     <ClCompile Include="MochinekoEngine\Main.cpp" />
     <ClCompile Include="MochinekoEngine\ModelManager.cpp" />
     <ClCompile Include="MochinekoEngine\ObjectManager.cpp" />

@@ -4,8 +4,8 @@
 #include "ModelManager.h"
 #include "BoxCollider.h"
 
-using namespace DirectX;
-using namespace RunningSceneModel;
+using namespace DirectX;;
+using namespace MochinekoEngineResource;
 
 void SphereCollider::Init() {
 	FBX* model = ModelManager::GetModel(sphereColHandle_);

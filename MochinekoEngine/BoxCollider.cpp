@@ -1,14 +1,19 @@
 #include "BoxCollider.h"
 #include "Transform.h"
+#include "Framework.h"
+#include "ModelManager.h"
 
 using namespace DirectX;
+using namespace MochinekoEngineResource;
 
 void BoxCollider::Init() {
-	fbx_->Init();
-	fbx_->SetWireframe(true);
-	Transform transform = fbx_->GetTransform();
+	//fbx_->Init();
+	FBX* fbx = ModelManager::GetModel(boxColHandle_);
+	
+	fbx->SetWireframe(true);
+	Transform transform = fbx->GetTransform();
 	transform.scale_ = colliderSize_;
-	fbx_->SetTransform(transform);
+	fbx->SetTransform(transform);
 }
 
 void BoxCollider::Update() {
@@ -16,13 +21,15 @@ void BoxCollider::Update() {
 	transform_.location_ = parentTransform.location_;
 	transform_.scale_ = colliderSize_;
 
-	fbx_->SetTransform(transform_);
-	fbx_->UpdateTransform();
-	fbx_->Update();
+	FBX* fbx = ModelManager::GetModel(boxColHandle_);
+	fbx->SetTransform(transform_);
+	fbx->UpdateTransform();
+	fbx->Update();
 }
 
 void BoxCollider::Draw() {
-	fbx_->Draw();
+	FBX* fbx = ModelManager::GetModel(boxColHandle_);
+	fbx->Draw();
 }
 
 bool BoxCollider::IsHitBoxBox(BoxCollider* colA, BoxCollider* colB) {

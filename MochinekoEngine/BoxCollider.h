@@ -6,14 +6,14 @@
 
 class BoxCollider : public BaseCollider {
 private:
-	FBX* fbx_;
+	//FBX* fbx_;
 	DirectX::XMFLOAT3 colliderSize_;
 public:
 
 	BoxCollider(BaseObject* parent, const DirectX::XMFLOAT3& colliderSize)
 		: BaseCollider(ColliderType::BOX, parent) {
 		colliderSize_ = colliderSize;
-		fbx_ = new FBX("MochinekoEngine/Asset/BoxCollider.fbx");
+		//fbx_ = new FBX("MochinekoEngine/Asset/BoxCollider.fbx");
 	}
 
 	~BoxCollider() {

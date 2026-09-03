@@ -1,23 +1,26 @@
 #include "Enemy.h"
 #include "MochinekoEngine/BoxCollider.h"
 #include "Bullet.h"
+#include "MochinekoEngine/ModelManager.h"
+#include "GameGlobal.h"
+
+using namespace GameModel;
 
 void Enemy::Init() {
-	fbx_ = new FBX("Asset/Enemy.fbx");
-	fbx_->Init();
-
 	AddCollider(new BoxCollider(this, { 2.0f, 3.0f, 1.0f }));
 }
 
 void Enemy::Update() {
-	fbx_->SetTransform(transform_);
-	fbx_->UpdateTransform();
-	fbx_->Update();
+	FBX* fbx = ModelManager::GetModel(enemyHandle_);
+	fbx->SetTransform(transform_);
+	fbx->UpdateTransform();
+	fbx->Update();
 }
 
 void Enemy::Draw() {
-	fbx_->DrawImGUI();
-	fbx_->Draw();
+	FBX* fbx = ModelManager::GetModel(enemyHandle_);
+	fbx->DrawImGUI();
+	fbx->Draw();
 }
 
 void Enemy::Release()

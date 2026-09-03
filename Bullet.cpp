@@ -3,6 +3,9 @@
 #include "MochinekoEngine/SphereCollider.h"
 #include "MochinekoEngine/ModelManager.h"
 #include "RunningScene.h"
+#include "GameGlobal.h"
+
+using namespace GameModel;
 
 namespace {
 	const float DEFAULT_LIFETIME = 10.0f;
@@ -18,7 +21,7 @@ void Bullet::Init() {
 
 void Bullet::Update() {
 	//lifeTime_ -= 0.1f;
-	FBX* model = ModelManager::GetModel(RunningSceneModel::bulletHandle_);
+	FBX* model = ModelManager::GetModel(bulletHandle_);
 
 	if (lifeTime_ <= 0.0f) {
 		KillMe();
@@ -33,7 +36,7 @@ void Bullet::Update() {
 }
 
 void Bullet::Draw() {
-	FBX* model = ModelManager::GetModel(RunningSceneModel::bulletHandle_);
+	FBX* model = ModelManager::GetModel(bulletHandle_);
 	model->DrawImGUI();
 	model->Draw();
 }

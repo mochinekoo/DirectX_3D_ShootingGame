@@ -4,12 +4,12 @@
 
 class Enemy : public BaseObject{
 private:
-	FBX* fbx_;
+	//FBX* fbx_;
 public:
 
 	Enemy()
 		: BaseObject("Enemy") {
-		fbx_ = nullptr;
+		//fbx_ = nullptr;
 	};
 
 	~Enemy() {};

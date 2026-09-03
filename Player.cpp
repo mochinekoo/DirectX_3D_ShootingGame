@@ -4,11 +4,12 @@
 #include "Bullet.h"
 #include "MochinekoEngine/ObjectManager.h"
 #include "MochinekoEngine/BoxCollider.h"
+#include "MochinekoEngine/ModelManager.h"
+#include "GameGlobal.h"
+
+using namespace GameModel;
 
 void Player::Init() {
-	fbx_ = new FBX("Asset/Player.fbx");
-	fbx_->Init();
-
 	transform_.velocity_ = {0.1, 0, 0.1};
 
 	AddCollider(new BoxCollider(this, { 8.0f, 2.0f, 5.0f }));
@@ -44,14 +45,16 @@ void Player::Update() {
 		transform_.rotation_.y += DirectX::XMConvertToRadians(1.0f);
 	}
 
-	fbx_->SetTransform(transform_);
-	fbx_->UpdateTransform();
-	fbx_->Update();
+	FBX* fbx = ModelManager::GetModel(playerHandle_);
+	fbx->SetTransform(transform_);
+	fbx->UpdateTransform();
+	fbx->Update();
 }
 
 void Player::Draw() {
-	fbx_->DrawImGUI();
-	fbx_->Draw();
+	FBX* fbx = ModelManager::GetModel(playerHandle_);
+	fbx->DrawImGUI();
+	fbx->Draw();
 }
 
 void Player::Release()

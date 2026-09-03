@@ -15,6 +15,7 @@
 #include "DX2DManager.h"
 #include "FontText.h"
 #include "InputManager.h"
+#include "../GameGlobal.h"
 
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "Winmm.lib")
@@ -64,6 +65,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SceneManager::Init();
 	CameraManager::Init();
 	DX2DManager::Init();
+
+	MochinekoEngineResource::Init();
+	GameModel::Init();
 
 	//const std::string fontName, const int fontSize, const std::string& text, const Color& color) 
 	FontText* text = new FontText(L"メイリオ", 30, L"ああ", {0.0f, 0.0f, 0.0f, 1.0f});
