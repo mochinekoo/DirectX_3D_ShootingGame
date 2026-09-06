@@ -23,6 +23,7 @@
     <ClInclude Include="EndingScene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameGlobal.h" />
+    <ClInclude Include="MathUtil.h" />
     <ClInclude Include="MochinekoEngine\BaseCollider.h" />
     <ClInclude Include="MochinekoEngine\BaseObject.h" />
     <ClInclude Include="MochinekoEngine\BaseScene.h" />

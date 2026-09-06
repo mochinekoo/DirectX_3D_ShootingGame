@@ -34,6 +34,9 @@
     <Filter Include="Source\Object">
       <UniqueIdentifier>{ce5acbe9-7086-4cca-b259-9905ddeeb5c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MochinekoEngine\Util">
+      <UniqueIdentifier>{9cd29353-8985-4413-9fc1-bd1984595231}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MochinekoEngine\BaseObject.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="GameGlobal.h">
       <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtil.h">
+      <Filter>MochinekoEngine\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
