@@ -180,7 +180,7 @@
     <ClInclude Include="GameGlobal.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="MathUtil.h">
+    <ClInclude Include="MochinekoEngine\MathUtil.h">
       <Filter>MochinekoEngine\Util</Filter>
     </ClInclude>
   </ItemGroup>
