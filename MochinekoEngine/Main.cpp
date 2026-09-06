@@ -16,6 +16,7 @@
 #include "FontText.h"
 #include "InputManager.h"
 #include "../GameGlobal.h"
+#include "DX3DManager.h"
 
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "Winmm.lib")
@@ -25,6 +26,7 @@ namespace {
 }
 
 namespace MochinekoEngine {
+	inline float backgroundColor_[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	inline HWND mainWindowHandle_ = {};
 	inline bool canShutdown_ = false;
 	float deltaTime_ = 0.0f;
@@ -43,6 +45,22 @@ namespace MochinekoEngine {
 
 	float GetDeltaTime() {
 		return deltaTime_;
+	}
+
+	Color GetBackgroundColor() {
+		Color color = Color();
+		color.r_ = backgroundColor_[0];
+		color.g_ = backgroundColor_[1];
+		color.b_ = backgroundColor_[2];
+		color.a_ = backgroundColor_[3];
+		return color;
+	}
+
+	void SetBackgroundColor(const Color& color) {
+		backgroundColor_[0] = color.r_;
+		backgroundColor_[1] = color.g_;
+		backgroundColor_[2] = color.b_;
+		backgroundColor_[3] = color.a_;
 	}
 }
 
@@ -87,9 +105,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		else {
 			ID3D11RenderTargetView* renderTargetView = GetRTV();
 
-			float BACKGROUND_COLOR[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 			EnableZDepthWrite();
-			GetDeviceContext()->ClearRenderTargetView(renderTargetView,  BACKGROUND_COLOR);
+			GetDeviceContext()->ClearRenderTargetView(renderTargetView,  backgroundColor_);
 			GetDeviceContext()->ClearDepthStencilView(GetDepthView(), D3D11_CLEAR_DEPTH, 1.0f, 0);
 
 			static DWORD beforeTime = timeGetTime();

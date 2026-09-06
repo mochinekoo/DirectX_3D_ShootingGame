@@ -1,5 +1,8 @@
 #pragma once
 #include <Windows.h>
+#include <array>
+
+struct Color;
 
 namespace MochinekoEngine {
 
@@ -7,6 +10,8 @@ namespace MochinekoEngine {
 	bool CanShutdown();
 	void Shutdown();
 	float GetDeltaTime();
+	Color GetBackgroundColor();
+	void SetBackgroundColor(const Color& color);
 }
 
 namespace MochinekoEngineResource {
